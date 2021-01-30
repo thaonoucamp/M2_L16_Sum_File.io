@@ -33,15 +33,15 @@ public class Copy_File {
     }
 
     // 2.1. Hàm viết file(tham số là đường dẫn, file input);
-    public static void writeFile(String filePath, String fileReaded) throws IOException{
-        FileWriter writer = new FileWriter(filePath);
+    public static void writeFile(String filePath, String data) throws IOException{
+        FileWriter fileWriter = new FileWriter(filePath);
 
-        BufferedReader bWriter = new BufferedReader(writer);
+        BufferedWriter bWriter = new BufferedWriter(fileWriter);
 
         try {
-            bWriter.writer(fileReaded);
+            bWriter.write(data);
 
-            // Dong file de tranh roi va lap vo tan;
+            // Đóng file để tối ưu bộ nhớ;
             bWriter.close();
         } catch (IOException e) {
 
